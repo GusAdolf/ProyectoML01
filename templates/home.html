@@ -7,24 +7,63 @@
         </button>
         <ul class="dropdown-menu dropdown-menu-dark">
             <li>
-                <a href="#" class="dropdown-item btn btn-outline-light">Cargar documento</a>
+                <a href="#" class="dropdown-item btn btn-outline-light" id="c_doc" onclick="cambiarC()">Cargar documento</a>
             </li>
             <li>
-                <a href="#" class="dropdown-item btn btn-outline-light">Frase</a>
+                <a href="#" class="dropdown-item btn btn-outline-light" id="frase" onclick="cambiarF()">Frase</a>
             </li>
         </ul>
     </div>
 </div>
 
-<div>
-    <h1 class="display-2  " style="font-family: 'Flamenco';font-size: 50px;">
-        Digite una frase: </h1>
+<div id="contenedor"></div>
+<!--
+<div id="fr">
+    <div>
+        <h1 class="display-2  " style="font-family: 'Flamenco';font-size: 50px;">
+            Digite una frase: </h1>
 
+    </div>
+
+    <div class="form-floating" style="padding: 15px">
+        <textarea class="form-outline w-100" id="floatingTextarea2" style="height: 200px"></textarea>
+        <button type="button" class="btn btn-dark">Procesar</button>
+    </div>
 </div>
 
-<div class="form-floating" style="padding: 15px;">
-    <textarea class="form-outline w-100" id="floatingTextarea2" style="height: 200px"></textarea>
+<div id="cd">
+    <div class="form-floating" style="padding: 15px">
+        <button type="button" class="btn btn-dark">Cagar archivo</button>
+    </div>
 </div>
-<div class="p-3"></div>
+-->
+<div class="p-2"></div>
+
+<!--
+<script>
+    $(document).ready(function() {
+        $("#c_doc").click(function() {
+            $("#fr").hide();
+            $("#cd").show();
+        });
+        $("#frase").click(function() {
+            $("#fr").show();
+            $("#cd").hide();
+        });
+    });
+</script>
+-->
+
+<script type="text/javascript">
+    var container = document.getElementById('contenedor');
+
+    function cambiarF() {
+        container.innerHTML = "<div id='fr'><div><h1 class='display-2' style='font-family: 'Flamenco';font-size: 50px;''>Digite una frase: </h1></div><div class='form-floating' style='padding: 15px'><textarea class='form-outline w-100' id='floatingTextarea2' style='height: 200px'></textarea><button type='button' class='btn btn-dark'>Procesar</button></div></div>";
+    }
+
+    function cambiarC() {
+        container.innerHTML = '<div id="cd"><div class="form-floating" style="padding: 15px"><button type="button" class="btn btn-dark">Cagar archivo</button></div></div>'
+    }
+</script>
 
 {% endblock %}
