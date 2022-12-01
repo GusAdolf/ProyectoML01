@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,60 +13,57 @@
     <title>APP ML</title>
 </head>
 
-<body class="container-fluid" 
-    style= "height: 800px; 
+<body class="container-fluid" style="height: 800px; 
     background-image: url('https://img.freepik.com/vector-gratis/fondo-blanco-gris-brillante-lineas-onduladas_1017-25101.jpg');
     background-size: cover;
     background-repeat:no-repeat;
     background-position: center center">
 
 
-    <div class="container-sm " >
-        <div style="padding: 60px;">
-            <h1 class="display-1 text-center  " 
-            style= "font-family: 'Flamenco';font-size: 50px;">
-            DISCRIMINADOR DE CONTENIDO</h1>
+    <div class="container-sm ">
+        <div class="text-center">
+            <div style="padding: 30px;">
+                <h1 style="font-family: 'Flamenco';font-size: 50px; text-align: center">
+                    DISCRIMINADOR DE CONTENIDO</h1>
 
-        </div>
-    
-
-        <nav class="navbar navbar-center ">
-            
-            <div class="container-sm "  >
-            <a class="btn btn-outline-dark" href={{ url_for('home') }}> HOME </a>      
-            <a class="btn btn-outline-dark" href={{ url_for('carga') }}>CARGA </a>
-            <a class="btn btn-outline-dark" href={{ url_for('info') }}>ACERCA DE </a>
             </div>
-            
-        
-
-            
-        </nav>
 
 
+            <div class="row justify-content-around align-items-center">
+                <div class="col-sm-2">
 
 
-    {%  block content %}
-    {%  endblock  %}
-    
+                    <a class="btn btn-outline-dark" href={{ url_for( 'home') }}> HOME </a>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-outline-dark" href={{ url_for( 'info') }}>ACERCA DE </a>
+
+
+                </div>
+            </div>
+        </div>
+
+        {% block content %} {% endblock %}
+
     </div>
 
 
 
 
-  
 
-    
-   
+
+
+
 </body>
 
-<footer id="sticky-footer"   class="container-sm flex-shrink-0 py-4 bg-dark text-white-50" >
-    
-        <div class="container text-center " >
-            <small>Copyright 2022 &copy; Proyecto ML GRUPO1</small>
-         </div>
+<footer id="sticky-footer" class="container-sm flex-shrink-0 py-4 bg-dark text-white-50">
 
-  
-    
-  </footer> 
+    <div class="container text-center ">
+        <small>Copyright 2022 &copy; Proyecto ML GRUPO1</small>
+    </div>
+
+
+
+</footer>
+
 </html>
