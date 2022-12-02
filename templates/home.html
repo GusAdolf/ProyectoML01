@@ -18,18 +18,19 @@
 
 <div id="contenedor"></div>
 <!--
-<div id="fr">
+<div id='fr'>
     <div>
-        <h1 class="display-2  " style="font-family: 'Flamenco';font-size: 50px;">
+        <h1 class='display-2' style='font-family: "Flamenco";font-size: 50px;'>
             Digite una frase: </h1>
-
     </div>
-
-    <div class="form-floating" style="padding: 15px">
-        <textarea class="form-outline w-100" id="floatingTextarea2" style="height: 200px"></textarea>
-        <button type="button" class="btn btn-dark">Procesar</button>
-    </div>
+    <form action={{ url_for( 'resultados') }}>
+        <div class="form-floating" style="padding: 15px">
+            <textarea class="form-outline w-100" id="floatingTextarea2" style="height: 200px"></textarea>
+            <button type="submit" class="btn btn-dark">Procesar</button>
+        </div>
+    </form>
 </div>
+
 
 <div id="cd">
     <div class="form-floating" style="padding: 15px">
@@ -58,11 +59,11 @@
     var container = document.getElementById('contenedor');
 
     function cambiarF() {
-        container.innerHTML = "<div id='fr'><div><h1 class='display-2' style='font-family: 'Flamenco';font-size: 10px'>Digite una frase: </h1></div><div class='form-floating' style='padding: 15px'><textarea class='form-outline w-100' id='floatingTextarea2' style='height: 200px'></textarea><button type='button' class='btn btn-dark'>Procesar</button></div></div>";
+        container.innerHTML = "<div id='fr'><div><h1 class='display-2' style='font-family: 'Flamenco';font-size: 10px'>Digite una frase: </h1></div><form action={{ url_for( 'resultados') }}><div class='form-floating' style='padding: 15px'><textarea class='form-outline w-100 user_input' id='floatingTextarea2' name='user_input' style='height: 200px'></textarea><button type='submit' class='btn btn-dark'>Procesar</button></div></form></div>";
     }
 
     function cambiarC() {
-        container.innerHTML = '<div id="cd"><div class="form-floating" style="padding: 15px"><button type="button" class="btn btn-dark">Cagar archivo</button></div></div>'
+        container.innerHTML = '<div id="cd"><div class="form-floating" style="padding: 15px"><button type="button" class="btn btn-dark">Cagar archivo</button></div></div>';
     }
 </script>
 
