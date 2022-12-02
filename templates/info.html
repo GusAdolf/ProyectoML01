@@ -2,32 +2,8 @@
 
 {% block content %}
 
-
-<div class="container-sm ">
-    <div class="text-center">
-        <div style="padding: 30px;">
-            <h1 style="font-family: 'Flamenco';font-size: 50px; text-align: center">
-                ACERCA DE</h1>
-
-        </div>
-
-
-        <div class="row justify-content-around align-items-center">
-            <div class="col-sm-2">
-
-
-                <a class="btn btn-outline-dark" href={{ url_for( 'home') }}> HOME </a>
-            </div>
-            <div class="col-sm-2">
-                <a class="btn btn-outline-dark" href="acercade.html">ACERCA DE </a>
-
-
-            </div>
-        </div>
-    </div>
-
-
-</div>
+<h1>Acerca De </h1>
+   
 <br>
 <section class="content">
 
@@ -50,8 +26,8 @@
                                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Celular: +593 99 832 5684</li>
                                     </ul>
                                 </div>
-                                <div class="col-5 text-center">
-                                    <img src="../assets/img/cami.jpg" alt="user-avatar" class="img-circle img-fluid">
+                                <div style="padding: 15px;" class="col-5 text-center">
+                                    <img src="{{ c }}" alt="user-avatar" style="padding 5px" class="img-circle img-fluid" >
                                 </div>
                             </div>
                         </div>
@@ -72,8 +48,8 @@
                                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Celular: +593 98 459 5106</li>
                                     </ul>
                                 </div>
-                                <div class="col-5 text-center">
-                                    <img src="../assets/img/joss.jpg" alt="user-avatar" class="img-circle img-fluid">
+                                <div style="padding: 15px;" class="col-5 text-center">
+                                    <img src="{{ j }}" alt="user-avatar" class="img-circle img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -94,8 +70,9 @@
                                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Celular: +593 98 465 0320</li>
                                     </ul>
                                 </div>
-                                <div class="col-5 text-center">
-                                    <img src="../assets/img/gus.jpg" alt="user-avatar" class="img-circle img-fluid">
+                                <div style="padding: 15px;" class="col-5 text-center">
+                                    <img src="{{ g }}" alt="user-avatar" class="img-circle img-fluid">
+                                    
                                 </div>
                             </div>
                         </div>
@@ -122,8 +99,8 @@
                                             <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Celular: +593 98 340 5286</li>
                                         </ul>
                                     </div>
-                                    <div class="col-5 text-center">
-                                        <img src="../assets/img/jona.jpg" alt="user-avatar" class="img-circle img-fluid">
+                                    <div style="padding: 15px;" class="col-5 text-center">
+                                        <img src="{{ jo }}" alt="user-avatar" class="img-circle img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -144,8 +121,8 @@
                                             <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Celular: +593 97 863 9792</li>
                                         </ul>
                                     </div>
-                                    <div class="col-5 text-center">
-                                        <img src="../assets/img/alexis.jpeg" alt="user-avatar" class="img-circle img-fluid">
+                                    <div style="padding: 15px;" class="col-5 text-center">
+                                        <img src="{{ a }}" alt="user-avatar" class="img-circle img-fluid">
                                     </div>
                                 </div>
                             </div>
