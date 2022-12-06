@@ -26,7 +26,7 @@
     var container = document.getElementById('contenedor');
 
     function cambiarF() {
-        container.innerHTML = "<div class='p-3' id='fr'><div><h1 class='display-2' style='font-family: 'Flamenco';font-size: 10px'> Digite una frase: </h1></div><form action={{ url_for( 'resultados') }}><div class='form-floating' style='padding: 15px'><textarea class='form-outline w-100 user_input' id='floatingTextarea2' name='user_input' style='height: 200px'></textarea><button type='submit' class='btn btn-dark'>Procesar</button></div></form></div>";
+        container.innerHTML = "<div class='p-3' id='fr'><div><h1 class='display-2' style='font-family: 'Flamenco';font-size: 10px'> Digite una frase: </h1></div><form action={{ url_for( 'resultados') }} method = 'post'><div class='form-floating' style='padding: 15px'><textarea class='form-outline w-100 user_input' id='floatingTextarea2' name='user_input' style='height: 200px'></textarea><button type='submit' class='btn btn-dark'>Procesar</button></div></form></div>";
     }
 
     function cambiarC() {
