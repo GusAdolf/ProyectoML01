@@ -3,6 +3,7 @@ from flask import Flask
 from flask import render_template
 import os
 from flask import request
+import backend
 ##llamado a flask
 app = Flask(__name__)
 
@@ -15,11 +16,47 @@ app.config['UPLOAD_FOLDER'] = IMG_FOLDER
 ##servicio web
 #Carga de IMAGENES 
 
-@app.route('/')
+@app.route('/', methods = ["GET","POST"])
 def home():
     return render_template('home.html')
+def frase():
+    return render_template('frase.html')
 
+@app.route('/success', methods = ['POST'])  
+def success():  
+    if request.method == 'POST':  
+        f = request.files['file']
+        f.save(f.filename)
+        racismo = backend.cargaListas('static/FILES/racismo.txt')
+        idenGenero = backend.cargaListas('static\FILES\idenGen.txt')
+        clase = backend.cargaListas('static\FILES\clase.txt')
+        edad = 'asd'
+        d1 = backend.cargaDoc(f.filename)
+        """Construcción de Colección con listas discriminatorias"""
+        colecGeneral = backend.colecCompleta(d1,racismo,idenGenero,clase,edad)
+        """JACCARD"""
+        Jaccard = backend.jaccardCompleto(colecGeneral)
+        """COSENO"""
+        Coseno = backend.cosenoVect(colecGeneral)
+        return render_template("carga.html", name = f.filename,matrix1 = Jaccard, coseno = Coseno)
 
+@app.route('/success2', methods = ['POST'])  
+def success2():  
+    if request.method == 'POST':  
+        f = request.files['file']
+        f.save(f.filename)
+        racismo = backend.cargaListas('static/FILES/racismo.txt')
+        idenGenero = backend.cargaListas('static\FILES\idenGen.txt')
+        clase = backend.cargaListas('static\FILES\clase.txt')
+        edad = 'asd'
+        d1 = backend.cargaColec(f.filename)
+        """Construcción de Colección con listas discriminatorias"""
+        colecGeneral = backend.colecCompleta(d1,racismo,idenGenero,clase,edad)
+        """JACCARD"""
+        Jaccard = backend.jaccardCompleto(colecGeneral)
+        """COSENO"""
+        Coseno = backend.cosenoVect(colecGeneral)
+        return render_template("carga.html", name = f.filename,matrix1 = Jaccard, coseno = Coseno)
 
 @app.route('/info')
 def info():
@@ -35,7 +72,18 @@ def info():
 @app.route('/resultados')
 def resultados():
     user_input = request.args.get('user_input')
-    return render_template('resultados.html',result=user_input)
+    racismo = backend.cargaListas('static/FILES/racismo.txt')
+    idenGenero = backend.cargaListas('static\FILES\idenGen.txt')
+    clase = backend.cargaListas('static\FILES\clase.txt')
+    edad = 'asd'
+    d1 = str(user_input)
+    """Construcción de Colección con listas discriminatorias"""
+    colecGeneral = [d1,racismo,idenGenero,clase,edad]
+    """JACCARD"""
+    Jaccard = backend.jaccardCompleto(colecGeneral)
+    """COSENO"""
+    Coseno = backend.cosenoVect(colecGeneral)
+    return render_template('resultados.html',result=user_input,matrix1 = Jaccard, coseno = Coseno)
 
 
 

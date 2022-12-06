@@ -15,59 +15,42 @@
     <link rel="icon" href="https://cdn.icon-icons.com/icons2/1724/PNG/512/4023873-brain-learning-machine-machine-learning-ml_112855.png">
 </head>
 
-<body class="container-fluid" style="height: 800px; 
+
+
+
+<body class="container-fluid" style="height: 900px; 
     background-image: url('https://img.freepik.com/vector-gratis/fondo-blanco-gris-brillante-lineas-onduladas_1017-25101.jpg');
     background-size: cover;
     background-repeat:no-repeat;
     background-position: center center">
 
 
-    <div class="container-sm ">
-        <div class="text-center">
-            <div style="padding: 30px;">
-                <h1 style="font-family: 'Flamenco';font-size: 50px; text-align: center">
-                    DISCRIMINADOR DE CONTENIDO</h1>
-
-            </div>
-
-
-            <div class="row justify-content-around align-items-center">
-                <div class="col-sm-2">
-
-
-                    <a class="btn btn-outline-dark" href={{ url_for( 'home') }}> HOME </a>
-                </div>
-                <div class="col-sm-2">
-                    <a class="btn btn-outline-dark" href={{ url_for( 'info') }}>ACERCA DE </a>
-
-
+    
+    <div class="container-fluid text-center">
+        <header style="padding: 20px;">
+            <h1 style="font-family: 'Flamenco';font-size: 50px; text-align: center">
+                DISCRIMINADOR DE CONTENIDO</h1>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="navbar-expand" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                <a class="nav-item nav-link active" href={{ url_for( 'home') }}>Home</a>
+                <a class="nav-item nav-link" href={{ url_for( 'info') }}>Acerca de</a>
                 </div>
             </div>
-        </div>
-
+        </nav>
+    </div>
+    <div class="p-2 container-fluid bg-transparent">
         {% block content %}
         
         {% endblock %}
-
     </div>
-
-
-
-
-
-
-
-
 </body>
 
-<footer id="sticky-footer" class="container-sm flex-shrink-0 py-4 bg-dark text-white-50">
-
-    <div class="container text-center ">
+<footer id="sticky-footer" class="container-fluid flex-shrink-0 py-4 bg-dark text-white-50">
+    <div class="container-sm text-center ">
         <small>Copyright 2022 &copy; Proyecto ML GRUPO1</small>
     </div>
-
-
-
 </footer>
 
 </html>
