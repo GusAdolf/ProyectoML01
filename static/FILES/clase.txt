@@ -7,7 +7,7 @@ nacas
 nacos
 feos
 huevones
-no trabajan lo suficiente
+trabajan lo suficiente
 pobre
 sucio
 puercos
@@ -72,7 +72,7 @@ ricachón
 privilegiado
 estúpidos
 politiqueros
-malandrin
+malandrín
 burra
 bruta
 pelucón
@@ -80,3 +80,31 @@ pobretón
 ladronzuelo
 ignorante
 atrevido
+chiro
+pobretones
+cholos
+burros
+pulgoso
+sarnoso
+piojoso
+desocupado
+desempleado
+holgazán
+callejero
+desaprovechado
+desaplicado
+ricacho
+ostentoso
+lamparoso
+desvalido
+huerfano
+infortunado
+desamparado
+desheredado
+insuficiente
+improductivo
+mugriento
+destruido
+miserable
+pordiosero
+plebeyo

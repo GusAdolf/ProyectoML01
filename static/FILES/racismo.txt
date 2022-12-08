@@ -1,19 +1,13 @@
 gorila
 mono
-galleta oreo
-indio sucio
-negro hediondo
 chocolatoso
 trompuo
 bembudo
 guangudo
 longo
 indio
-pelo estropajo
 chiloso
 waipe
-morcilla
-centavo
 matamba
 cholo
 humilde
@@ -21,9 +15,7 @@ blacki
 nigga
 niga
 naco
-bembuda
 trompuda
-chilosa
 pelón
 cabezón
 bembón
@@ -38,16 +30,15 @@ pastuzo
 esclavo
 negrillín
 pastuza
-no contactado
 mulatillo
 bagre
 negrear
+blancote
+blancaso
 mico
-humor negro
 canelita
 canela
 macaco
-merienda de negros
 quilombo
 quilombero
 prieto
@@ -59,33 +50,18 @@ morenaso
 refugiado
 ladrona
 ilegal
-ilegales
 negrito
 negraso
 morenito
-color piel
 pobre
 prietito
 quemado
-trabaja como negro
-oveja negra
-mercado negro
-día negro
-mano negra
 colorado
 gatito
 pálido
-chola
-gente de color
-suerte negra
-tener la negra
-negra intención
-dinero negro
+choliyo
 negrero
-pozo negro
-magia negra
 chocolate
-persona de color
 negritillo
 negroide
 aborigen
@@ -94,13 +70,13 @@ tribu
 mulato
 mulataso
 apache
+casera
+maría
+verdulera
 oscurito
-noche negra
 pobretón
 estopa
-cabeza comino
 comino
-pelo chichi
 nativo
 autóctono
 asqueroso
@@ -117,25 +93,105 @@ atahualpa
 pachacutek
 pachacutik
 cuadrada
-cuerpo de armario
 seca
 chupada
 montuvio
 pinchagua
-coje burra
 esclavista
-bermejos
 gasparin
 vampiro
-palido
+pálido
 despigmentado
 percucio
 percudido
 chango
-gediendo
+gediondo
 gamín
 delicuente
 negritín
 rulimán
 rajado
 peluquín
+bermejo
+blanca
+blanquita
+indios
+indias
+amarillo
+peliteñida
+chinito
+piojoso
+niggas
+nigas
+mantenido
+ojón
+moti
+veneco
+salvaje
+gringo
+verdulaga
+noche negra
+humor negro
+coje burra
+pelo chichi
+pozo negro
+magia negra
+sueño negro
+cara de verga
+color morcilla
+no contactado
+merienda de negros
+chino cochino
+colorada infiel
+persona de color
+indio igualado
+negro del chota
+negro vago
+color humilde
+color cobre
+color piel
+color carbón
+negro azulado
+color canela
+color canelita
+trabaja como negro
+oveja negra
+mercado negro
+día negro
+mano negra
+gente de color
+suerte negra
+tener la negra
+negra intención
+dinero negro
+cuerpo de armario
+negro delincuente
+trabaja como albañil
+trabaja como indio
+pata flaca
+pelo estropajo
+negro sarnoso
+indio pulgoso
+negro sin oficio
+mono sucio
+mono sabido
+negro sabido
+galleta oreo
+indio sucio
+negro sucio
+negro de mierda
+negro ladrón
+negro bobo
+cabeza de comino
+negro tonto
+indio tonto
+indio bobo
+indio gil
+negro gil
+negro hediondo
+negro mierda
+indio mierda
+color centavo
+negro sabroso
+negro choro
+indio choro
