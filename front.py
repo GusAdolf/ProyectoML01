@@ -33,7 +33,7 @@ def success():
         clase = backend.cargaListas('static\FILES\clase.txt')
         edad = backend.cargaListas('static\FILES\edad.txt')
         d1 = backend.cargaDoc(f.filename)
-        n = len(d1[0])
+        n = 1
         """Construcción de Colección con listas discriminatorias"""
         colecGeneral = backend.colecCompleta(d1,racismo,idenGenero,clase,edad)
         """JACCARD"""
