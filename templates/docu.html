@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block content %}
+
+   <div class="p-3 bg-light rounded shadow-lg">
+      <h4 class="h4">Carga de Archivo Exitosa</h4>
+      <div class="text-dark border-bottom border-dark">Datos de ingresados</div>
+      <h6 class="h6">Texto del Documento</h6>
+      <ul>
+         <li lang="es-ES"><small charset="utf-8" lang="es-ES">{{doc}}</small> </li>  
+      </ul>
+      <p>Distancia de Jaccard </p>
+      <p>{{jaccard}}</p>
+      <p>Sorensen Dice</p>
+      <p>{{sorensen}}</p>
+      <p>Coseno Vectorial</p>
+      <p>{{coseno}}</p>
+   </div> 
+      
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+
+   <div class="p-3 bg-light rounded shadow-lg">
+      <h4 class="h4">Carga de Archivo Exitosa</h4>
+      <div class="text-dark border-bottom border-dark">Datos de ingresados</div>
+      <div class="card mb-3">
+         <img src="{{ img }}" class="card-img-top rounded" alt="...">
+         <div class="card-body">
+           <h5 class="card-title">Captura de texto</h5>
+           <p class="card-text">{{doc}}</p>
+         </div>
+      </div>
+      <p>Distancia de Jaccard </p>
+      <p>{{jaccard}}</p>
+      <p>Sorensen Dice</p>
+      <p>{{sorensen}}</p>
+      <p>Coseno Vectorial</p>
+      <p>{{coseno}}</p>
+   </div> 
+      
+
+{% endblock %}

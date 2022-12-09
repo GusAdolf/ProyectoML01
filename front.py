@@ -4,7 +4,6 @@ from flask import render_template
 import os
 from flask import request
 import backend
-import numpy as np
 ##llamado a flask
 app = Flask(__name__)
 
@@ -15,26 +14,22 @@ app.config['UPLOAD_FOLDER'] = IMG_FOLDER
 
 
 ##servicio web
-#Carga de IMAGENES 
-
 @app.route('/', methods = ["GET","POST"])
 def home():
     return render_template('home.html')
-def frase():
-    return render_template('frase.html')
 
 #Documento
-@app.route('/success', methods = ['POST'])  
+@app.route('/success', methods = ["GET","POST"])  
 def success():  
     if request.method == 'POST':  
         f = request.files['file']
-        f.save(f.filename)
+        f.save(os.path.join(app.config['UPLOAD_FOLDER'],f.filename))
+        doc = os.path.join(app.config['UPLOAD_FOLDER'],f.filename)
         racismo = backend.cargaListas('static/FILES/racismo.txt')
         idenGenero = backend.cargaListas('static\FILES\idenGen.txt')
         clase = backend.cargaListas('static\FILES\clase.txt')
         edad = backend.cargaListas('static\FILES\edad.txt')
-        d1 = backend.cargaDoc(f.filename)
-        d = d1
+        d1 = backend.cargaDoc(doc)
         n = 1
         """Construcción de Colección con listas discriminatorias"""
         colecGeneral = backend.colecCompleta(d1,racismo,idenGenero,clase,edad)
@@ -47,19 +42,22 @@ def success():
         """COSENO"""
         Coseno = backend.cosenoVectN(colecGeneral,1,2,0)
         cosRes = backend.respuesta(Coseno,n)
-        return render_template("carga.html",doc = d,jaccard = jacRes, coseno = cosRes, sorensen = sorRes)
+        items,flag = backend.cargaDoc(doc)
+        print(items)
+        return render_template("docu.html",doc = items,jaccard = jacRes, coseno = cosRes, sorensen = sorRes)
 
 #Colección
-@app.route('/success2', methods = ['POST'])  
+@app.route('/success2', methods = ["GET","POST"])  
 def success2():  
     if request.method == 'POST':  
         f = request.files['file']
-        f.save(f.filename)
+        f.save(os.path.join(app.config['UPLOAD_FOLDER'],f.filename))
+        doc = os.path.join(app.config['UPLOAD_FOLDER'],f.filename)
         racismo = backend.cargaListas('static/FILES/racismo.txt')
         idenGenero = backend.cargaListas('static\FILES\idenGen.txt')
         clase = backend.cargaListas('static\FILES\clase.txt')
         edad = backend.cargaListas('static\FILES\edad.txt')
-        d1 = backend.cargaColec(f.filename)
+        d1 = backend.cargaColec(doc)
         n = len(d1[0])
         """Construcción de Colección con listas discriminatorias"""
         colecGeneral = backend.colecCompleta(d1,racismo,idenGenero,clase,edad)
@@ -72,7 +70,39 @@ def success2():
         """COSENO"""
         Coseno = backend.cosenoVectN(colecGeneral,1,2,0)
         cosRes = backend.respuesta(Coseno,n)
-        return render_template("carga.html",doc = backend.cargaColec(f.filename)[0].encode(encoding = 'UTF-8', errors = 'strict'),jaccard = jacRes, coseno = cosRes, sorensen = sorRes)
+        items,flag = backend.cargaColec(doc)
+        [x.encode('utf-8').decode('utf-8') for x in items]
+        print(items)
+        return render_template("coleccion.html",len=n,doc = items,jaccard = jacRes, coseno = cosRes, sorensen = sorRes)
+
+#Imagen
+@app.route('/success3', methods = ["GET","POST"])  
+def success3():  
+    if request.method == 'POST':  
+        f = request.files['file']
+        f.save(os.path.join(app.config['UPLOAD_FOLDER'],f.filename))
+        img = os.path.join(app.config['UPLOAD_FOLDER'],f.filename)
+        racismo = backend.cargaListas('static/FILES/racismo.txt')
+        idenGenero = backend.cargaListas('static\FILES\idenGen.txt')
+        clase = backend.cargaListas('static\FILES\clase.txt')
+        edad = backend.cargaListas('static\FILES\edad.txt')
+        d1 = backend.cargaDoc(img)
+        n = 1
+        """Construcción de Colección con listas discriminatorias"""
+        colecGeneral = backend.colecCompleta(d1,racismo,idenGenero,clase,edad)
+        """JACCARD"""
+        Jaccard = backend.jaccardCompleto(colecGeneral,1,2,0)
+        jacRes = backend.respuesta(Jaccard,n)
+        """Sorensen"""
+        Sorensen = backend.sorensenCompleto(colecGeneral,1,2,0)
+        sorRes = backend.respuesta(Sorensen,n)
+        """COSENO"""
+        Coseno = backend.cosenoVectN(colecGeneral,1,2,0)
+        cosRes = backend.respuesta(Coseno,n)
+        items,flag = backend.cargaDoc(img)
+        print(items)
+        return render_template("img.html",len=n,doc = items,jaccard = jacRes, coseno = cosRes, sorensen = sorRes, img = img)
+
 
 @app.route('/info')
 def info():
@@ -84,8 +114,8 @@ def info():
     alexis=os.path.join(app.config['UPLOAD_FOLDER'], 'alexis.jpeg')
     return render_template("info.html", c=cami,g=gus,j=joss,jo=jona,a=alexis)
        
-   
-@app.route('/submit', methods=['POST'])
+#Frase
+@app.route('/submit', methods=["GET","POST"])
 def submit():
     racismo = backend.cargaListas('static/FILES/racismo.txt')
     idenGenero = backend.cargaListas('static\FILES\idenGen.txt')

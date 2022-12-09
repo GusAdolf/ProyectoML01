@@ -1,7 +1,4 @@
 import numpy as np
-import pandas as pd
-from string import digits
-import csv
 #libreria para eliminar caracteres especiales
 import re
 #Para la remosion de palabras vacias
@@ -10,9 +7,9 @@ nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk import SnowballStemmer
 import itertools
-import math
 from nanonets import NANONETSOCR
 import os
+import math
 from sklearn.metrics import jaccard_score
 model = NANONETSOCR()
 model.set_token('d-AfG5kaGRX00gMvW4W5epeg6QY3FIeR')
