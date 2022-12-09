@@ -8,9 +8,9 @@ import numpy as np
 ##llamado a flask
 app = Flask(__name__)
 
-IMG_FOLDER = os.path.join('static', 'IMG')
+UPLOAD_FOLDER = os.path.join('static', 'UPD')
 
-app.config['UPLOAD_FOLDER'] = IMG_FOLDER
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 
@@ -26,10 +26,10 @@ def success():
         f = request.files['file']
         f.save(os.path.join(app.config['UPLOAD_FOLDER'],f.filename))
         doc = os.path.join(app.config['UPLOAD_FOLDER'],f.filename)
-        racismo = backend.cargaListas('static/FILES/racismo.txt')
-        idenGenero = backend.cargaListas('static\FILES\idenGen.txt')
-        clase = backend.cargaListas('static\FILES\clase.txt')
-        edad = backend.cargaListas('static\FILES\edad.txt')
+        racismo = backend.cargaListas(os.path.join(app.config['UPLOAD_FOLDER'],'racismo.txt'))
+        idenGenero = backend.cargaListas(os.path.join(app.config['UPLOAD_FOLDER'],'idenGen.txt'))
+        clase = backend.cargaListas(os.path.join(app.config['UPLOAD_FOLDER'],'clase.txt'))
+        edad = backend.cargaListas(os.path.join(app.config['UPLOAD_FOLDER'],'edad.txt'))
         d1 = backend.cargaDoc(doc)
         n = 1
         """Construcción de Colección con listas discriminatorias"""
@@ -57,10 +57,10 @@ def success2():
         f = request.files['file']
         f.save(os.path.join(app.config['UPLOAD_FOLDER'],f.filename))
         doc = os.path.join(app.config['UPLOAD_FOLDER'],f.filename)
-        racismo = backend.cargaListas('static/FILES/racismo.txt')
-        idenGenero = backend.cargaListas('static\FILES\idenGen.txt')
-        clase = backend.cargaListas('static\FILES\clase.txt')
-        edad = backend.cargaListas('static\FILES\edad.txt')
+        racismo = backend.cargaListas(os.path.join(app.config['UPLOAD_FOLDER'],'racismo.txt'))
+        idenGenero = backend.cargaListas(os.path.join(app.config['UPLOAD_FOLDER'],'idenGen.txt'))
+        clase = backend.cargaListas(os.path.join(app.config['UPLOAD_FOLDER'],'clase.txt'))
+        edad = backend.cargaListas(os.path.join(app.config['UPLOAD_FOLDER'],'edad.txt'))
         d1 = backend.cargaColec(doc)
         n = len(d1[0])
         """Construcción de Colección con listas discriminatorias"""
@@ -86,10 +86,10 @@ def success3():
         f = request.files['file']
         f.save(os.path.join(app.config['UPLOAD_FOLDER'],f.filename))
         img = os.path.join(app.config['UPLOAD_FOLDER'],f.filename)
-        racismo = backend.cargaListas('static/FILES/racismo.txt')
-        idenGenero = backend.cargaListas('static\FILES\idenGen.txt')
-        clase = backend.cargaListas('static\FILES\clase.txt')
-        edad = backend.cargaListas('static\FILES\edad.txt')
+        racismo = backend.cargaListas(os.path.join(app.config['UPLOAD_FOLDER'],'racismo.txt'))
+        idenGenero = backend.cargaListas(os.path.join(app.config['UPLOAD_FOLDER'],'idenGen.txt'))
+        clase = backend.cargaListas(os.path.join(app.config['UPLOAD_FOLDER'],'clase.txt'))
+        edad = backend.cargaListas(os.path.join(app.config['UPLOAD_FOLDER'],'edad.txt'))
         d1 = backend.cargaDoc(img)
         n = 1
         """Construcción de Colección con listas discriminatorias"""
@@ -124,10 +124,10 @@ def info():
 #Frase
 @app.route('/submit', methods=["GET","POST"])
 def submit():
-    racismo = backend.cargaListas('static/FILES/racismo.txt')
-    idenGenero = backend.cargaListas('static\FILES\idenGen.txt')
-    clase = backend.cargaListas('static\FILES\clase.txt')
-    edad = backend.cargaListas('static\FILES\edad.txt')
+    racismo = backend.cargaListas(os.path.join(app.config['UPLOAD_FOLDER'],'racismo.txt'))
+    idenGenero = backend.cargaListas(os.path.join(app.config['UPLOAD_FOLDER'],'idenGen.txt'))
+    clase = backend.cargaListas(os.path.join(app.config['UPLOAD_FOLDER'],'clase.txt'))
+    edad = backend.cargaListas(os.path.join(app.config['UPLOAD_FOLDER'],'edad.txt'))
     d1 = (request.form['text'],1)
     n = 1
     #Construcción de Colección con listas discriminatorias

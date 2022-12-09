@@ -169,7 +169,7 @@ def tokenizacion(doc):
 #StopWords
 def stop_word(documento):
   documento = [word for word in documento if not word in set(stopwords.words('spanish'))]
-  documento = [word for word in documento if not word in set(cargaColecTxt('static/FILES/spanish.txt'))]
+  documento = [word for word in documento if not word in set(cargaColecTxt('static/UPD/spanish.txt'))]
   return documento
 
 #Stemmer
