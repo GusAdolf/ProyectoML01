@@ -1,17 +1,15 @@
 {% extends 'base.html' %} {% block content %}
-   <head>
-      <title>success</title>
-   </head>
-   <body>
-      <p>Carga de Archivo Exitosa</p>
-      <p>File Name: {{name}}</p>
+   <div class="p-3 bg-light rounded shadow-lg">
+      <h4 class="h4">Carga de Archivo Exitosa</h4>
+      <div class="text-dark border-bottom border-dark">Datos de ingresados</div>
+      <small>{{doc}}</small>
       <p>Distancia de Jaccard </p>
       <p>{{jaccard}}</p>
       <p>Sorensen Dice</p>
       <p>{{sorensen}}</p>
       <p>Coseno</p>
       <p>{{coseno}}</p>
-   </body>
-</html>
+   </div> 
+      
 
 {% endblock %}

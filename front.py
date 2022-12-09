@@ -4,6 +4,7 @@ from flask import render_template
 import os
 from flask import request
 import backend
+import numpy as np
 ##llamado a flask
 app = Flask(__name__)
 
@@ -33,6 +34,7 @@ def success():
         clase = backend.cargaListas('static\FILES\clase.txt')
         edad = backend.cargaListas('static\FILES\edad.txt')
         d1 = backend.cargaDoc(f.filename)
+        d = d1
         n = 1
         """Construcción de Colección con listas discriminatorias"""
         colecGeneral = backend.colecCompleta(d1,racismo,idenGenero,clase,edad)
@@ -45,7 +47,7 @@ def success():
         """COSENO"""
         Coseno = backend.cosenoVectN(colecGeneral,1,2,0)
         cosRes = backend.respuesta(Coseno,n)
-        return render_template("carga.html", name = f.filename,jaccard = jacRes, coseno = cosRes, sorensen = sorRes)
+        return render_template("carga.html",doc = d,jaccard = jacRes, coseno = cosRes, sorensen = sorRes)
 
 #Colección
 @app.route('/success2', methods = ['POST'])  
@@ -70,7 +72,7 @@ def success2():
         """COSENO"""
         Coseno = backend.cosenoVectN(colecGeneral,1,2,0)
         cosRes = backend.respuesta(Coseno,n)
-        return render_template("carga.html", name = f.filename,jaccard = jacRes, coseno = cosRes, sorensen = sorRes)
+        return render_template("carga.html",doc = backend.cargaColec(f.filename)[0].encode(encoding = 'UTF-8', errors = 'strict'),jaccard = jacRes, coseno = cosRes, sorensen = sorRes)
 
 @app.route('/info')
 def info():
