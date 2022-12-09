@@ -1,22 +1,124 @@
 {% extends 'base.html' %} {% block content %}
 
-   <div class="p-3 bg-light rounded shadow-lg">
-      <h4 class="h4">Carga de Archivo Exitosa</h4>
-      <div class="text-dark border-bottom border-dark">Datos de ingresados</div>
-      <div class="card mb-3">
-         <img src="{{ img }}" class="card-img-top rounded" alt="...">
-         <div class="card-body">
-           <h5 class="card-title">Captura de texto</h5>
-           <p class="card-text">{{doc}}</p>
-         </div>
-      </div>
-      <p>Distancia de Jaccard </p>
-      <p>{{jaccard}}</p>
-      <p>Sorensen Dice</p>
-      <p>{{sorensen}}</p>
-      <p>Coseno Vectorial</p>
-      <p>{{coseno}}</p>
-   </div> 
-      
+<div class="p-3 bg-light rounded shadow-lg">
+    <h4 class="h4">Carga de Archivo Exitosa</h4>
+    <div class="text-dark border-bottom border-dark">Datos de ingresados</div>
+    <div class="card mb-3">
+        <img src="{{ img }}" class="card-img-top rounded" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Captura de texto</h5>
+            <p class="card-text">{{doc}}</p>
+        </div>
+    </div>
+    <p>Distancia de Jaccard </p>
+    <p>{{jaccard}}</p>
+    <p>Sorensen Dice</p>
+    <p>{{sorensen}}</p>
+    <p>Coseno Vectorial</p>
+    <p>{{coseno}}</p>
+</div>
+<div class="p-3"></div>
+<button type="button" class="btn btn-dark" id="frase" onclick='funcion()'>Mostrar graficas</button>
+<div class="p-3"></div>
+<div id="container" style="width: 100%;
+   height: 100%;
+   margin: 0;
+   padding: 0;"></div>
+<div class="p-3"></div>
+<div id="container1" style="width: 100%;
+   height: 100%;
+   margin: 0;
+   padding: 0;"></div>
+<div class="p-3"></div>
+<div id="container2" style="width: 100%;
+   height: 100%;
+   margin: 0;
+   padding: 0;"></div>
+
+<script>
+    function funcion() {
+
+
+        anychart.onDocumentReady(function() {
+
+            // set the data
+            var data = {
+                header: ["Grafica de similitudes"],
+                rows: [
+                    ["Raza", "{{jaccard[0]}}"],
+                    ["Genero", "{{jaccard[1]}}"],
+                    ["Clase", "{{jaccard[2]}}"],
+                    ["Edad", "{{jaccard[3]}}"]
+                ],
+                boxWith: 200
+            };
+
+            // create the chart
+            var chart = anychart.bar();
+
+            // add the data
+            chart.data(data);
+            // set the chart title
+            chart.title("Grafica de similitudes de Jaccard");
+
+            // draw
+            chart.container("container");
+            chart.draw();
+        });
+
+        anychart.onDocumentReady(function() {
+
+            // set the data
+            var data = {
+                header: ["Grafica de similitudes"],
+                rows: [
+                    ["Raza", "{{sorensen[0]}}"],
+                    ["Genero", "{{sorensen[1]}}"],
+                    ["Clase", "{{sorensen[2]}}"],
+                    ["Edad", "{{sorensen[3]}}"]
+                ],
+                boxWith: 200
+            };
+
+            // create the chart
+            var chart = anychart.bar();
+
+            // add the data
+            chart.data(data);
+            // set the chart title
+            chart.title("Grafica de similitudes de Sorencen-Dice");
+
+            // draw
+            chart.container("container1");
+            chart.draw();
+        });
+        anychart.onDocumentReady(function() {
+
+            // set the data
+            var data = {
+                header: ["Grafica de similitudes"],
+                rows: [
+                    ["Raza", "{{coseno[0]}}"],
+                    ["Genero", "{{coseno[1]}}"],
+                    ["Clase", "{{coseno[2]}}"],
+                    ["Edad", "{{coseno[3]}}"]
+                ],
+                boxWith: 200
+            };
+
+            // create the chart
+            var chart = anychart.bar();
+
+            // add the data
+            chart.data(data);
+            // set the chart title
+            chart.title("Grafica de similitudes de Coseno Vectorial");
+
+            // draw
+            chart.container("container2");
+            chart.draw();
+        });
+    };
+</script>
 
 {% endblock %}
