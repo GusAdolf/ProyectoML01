@@ -44,7 +44,10 @@ def success():
         cosRes = backend.respuesta(Coseno,n)
         items,flag = backend.cargaDoc(doc)
         print(items)
-        return render_template("docu.html",doc = items,jaccard = jacRes, coseno = cosRes, sorensen = sorRes)
+        jacRes1 = (jacRes[0,:])
+        sorRes1 = (sorRes[0,:])
+        cosRes1 = (cosRes[0,:])
+        return render_template("docu.html",doc = items,jaccard = jacRes1, coseno = cosRes1, sorensen = sorRes1)
 
 #Colección
 @app.route('/success2', methods = ["GET","POST"])  
@@ -101,7 +104,10 @@ def success3():
         cosRes = backend.respuesta(Coseno,n)
         items,flag = backend.cargaDoc(img)
         print(items)
-        return render_template("img.html",len=n,doc = items,jaccard = jacRes, coseno = cosRes, sorensen = sorRes, img = img)
+        jacRes1 = (jacRes[0,:])
+        sorRes1 = (sorRes[0,:])
+        cosRes1 = (cosRes[0,:])
+        return render_template("img.html",len=n,doc = items,jaccard = jacRes1, coseno = cosRes1, sorensen = sorRes1, img = img)
 
 
 @app.route('/info')
@@ -134,7 +140,10 @@ def submit():
     #COSENO
     Coseno = backend.cosenoVectN(colecGeneral,1,2,0)
     cosRes = backend.respuesta(Coseno,n)
-    return render_template('resultados.html',result=request.form['text'],jaccard = jacRes, coseno = cosRes, sorensen = sorRes)
+    jacRes1 = (jacRes[0,:])
+    sorRes1 = (sorRes[0,:])
+    cosRes1 = (cosRes[0,:])
+    return render_template('resultados.html',result=request.form['text'],jaccard = jacRes1, coseno = cosRes1, sorensen = sorRes1)
 
 
 ##ejecutar el servicio web
