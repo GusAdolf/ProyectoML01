@@ -9,12 +9,75 @@
          <li lang="es-ES"><small charset="utf-8" lang="es-ES">{{doc[i]}}</small> </li>  
       {% endfor %}
       </ol>
-      <p>Distancia de Jaccard </p>
-      <p>{{jaccard}}</p>
-      <p>Sorensen Dice</p>
-      <p>{{sorensen}}</p>
-      <p>Coseno Vectorial</p>
-      <p>{{coseno}}</p>
+      <h7 class="h7">Similitud de Jaccard</h7>
+      <table class="table">
+         <thead>
+            <tr>
+                <th scope="col">Num Doc</th>
+                <th scope="col">Raza</th>
+                <th scope="col">Genero</th>
+                <th scope="col">Clase</th>
+                <th scope="col">edad</th>
+            </tr>
+         </thead>
+         <tbody>
+            {%for row in range(0,len)%}
+            <tr>
+               <th scope="row">{{row+1}}</th>
+               {%for col in range(0,4)%}
+                 <td>{{jaccard[row][col]}} %</td>
+               {%endfor%}
+            </tr>
+            {%endfor%}
+         </tbody>         
+      </table>
+      <h7 class="h7">Sorensen Dice</h7>
+      <table class="table">
+         <thead>
+            <tr>
+                <th scope="col">Num Doc</th>
+                <th scope="col">Raza</th>
+                <th scope="col">Genero</th>
+                <th scope="col">Clase</th>
+                <th scope="col">edad</th>
+            </tr>
+         </thead>
+         <tbody>
+            {%for row in range(0,len)%}
+            <tr>
+               <th scope="row">{{row+1}}</th>
+               {%for col in range(0,4)%}
+                 <td>{{sorensen[row][col]}} %</td>
+               {%endfor%}
+            </tr>
+            {%endfor%}
+         </tbody>         
+      </table>
+      <h7 class="h7">Similitud de Coseno Vectorial</h7>
+      <table class="table">
+         <thead>
+            <tr>
+                <th scope="col">Num Doc</th>
+                <th scope="col">Raza</th>
+                <th scope="col">Genero</th>
+                <th scope="col">Clase</th>
+                <th scope="col">edad</th>
+            </tr>
+         </thead>
+         <tbody>
+            {%for row in range(0,len)%}
+            <tr>
+               <th scope="row">{{row+1}}</th>
+               {%for col in range(0,4)%}
+                 <td>{{coseno[row][col]}} %</td>
+               {%endfor%}
+            </tr>
+            {%endfor%}
+         </tbody>         
+      </table>
+
+      
+
    </div> 
       
 

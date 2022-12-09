@@ -4,6 +4,7 @@ from flask import render_template
 import os
 from flask import request
 import backend
+import numpy as np
 ##llamado a flask
 app = Flask(__name__)
 
@@ -66,13 +67,13 @@ def success2():
         colecGeneral = backend.colecCompleta(d1,racismo,idenGenero,clase,edad)
         """JACCARD"""
         Jaccard = backend.jaccardCompleto(colecGeneral,1,2,0)
-        jacRes = backend.respuesta(Jaccard,n)
+        jacRes = np.round(backend.respuesta(Jaccard,n),2)
         """Sorensen"""
         Sorensen = backend.sorensenCompleto(colecGeneral,1,2,0)
-        sorRes = backend.respuesta(Sorensen,n)
+        sorRes = np.round(backend.respuesta(Sorensen,n),2)
         """COSENO"""
         Coseno = backend.cosenoVectN(colecGeneral,1,2,0)
-        cosRes = backend.respuesta(Coseno,n)
+        cosRes = np.round(backend.respuesta(Coseno,n),2)
         items,flag = backend.cargaColec(doc)
         [x.encode('utf-8').decode('utf-8') for x in items]
         print(items)
